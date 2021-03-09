@@ -1,0 +1,19 @@
+<div>EooooooOOOOOOOo</div>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">Error :(</div>
+<div *ngIf="artistList">
+  <div *ngFor="let artist of artistList" class="list-container">
+    <div class="list-item">
+      <img src="{{ artist.picture }}" class="thumbnail" />
+      <div class="section-container">
+        <p class="label">ARTIST:</p>
+        <p class="text">{{ artist.name }}</p>
+      </div>
+      <div class="section-container">
+        <p class="label">PRICE</p>
+        <p class="text">SEK {{ artist.price }}</p>
+      </div>
+      <a href="{{ artist.video }}">Video</a>
+    </div>
+  </div>
+</div>
