@@ -1,8 +1,14 @@
-<div>EooooooOOOOOOOo</div>
+<div>
+  <input [(ngModel)]="searchText" placeholder="Search for artist" />
+  <span *ngIf="searchText.length > 0" (click)="clearFilter()">X</span>
+</div>
 <div *ngIf="loading">Loading...</div>
 <div *ngIf="error">Error :(</div>
 <div *ngIf="artistList">
-  <div *ngFor="let artist of artistList" class="list-container">
+  <div
+    *ngFor="let artist of artistList | filter: searchText"
+    class="list-container"
+  >
     <div class="list-item">
       <img src="{{ artist.picture }}" class="thumbnail" />
       <div class="section-container">
@@ -11,9 +17,9 @@
       </div>
       <div class="section-container">
         <p class="label">PRICE</p>
-        <p class="text">SEK {{ artist.price }}</p>
+        <p class="text">{{ artist.price }} SEK</p>
       </div>
-      <a href="{{ artist.video }}">Video</a>
+      <a href="{{ artist.video }}" target="_blank">Video</a>
     </div>
   </div>
 </div>

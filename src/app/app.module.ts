@@ -5,16 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ListModule } from './shared/list/list.module';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ListComponent } from './shared/list/list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ListComponent, FilterPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    ListModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
