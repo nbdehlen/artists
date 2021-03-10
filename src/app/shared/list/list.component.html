@@ -14,7 +14,7 @@
 </div>
 <div *ngIf="loading">Loading...</div>
 <div *ngIf="error">Error :(</div>
-<div *ngIf="artistList">
+<div *ngIf="artistList" class="artist-list">
   <div
     *ngFor="let artist of artistList | filter: searchText:filterOn; index as i"
     class="list-container"
