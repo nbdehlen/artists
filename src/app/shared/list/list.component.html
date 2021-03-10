@@ -8,30 +8,43 @@
     *ngIf="searchText.length > 0"
     (click)="clearFilter()"
     class="temp-close-search-input"
-    >X</span
   >
+    <!-- <fa-icon [icon]="faTimes"></fa-icon> -->
+    Clear
+  </span>
 </div>
 <div *ngIf="loading">Loading...</div>
 <div *ngIf="error">Error :(</div>
 <div *ngIf="artistList">
   <div
-    *ngFor="let artist of artistList | filter: searchText:filterOn"
+    *ngFor="let artist of artistList | filter: searchText:filterOn; index as i"
     class="list-container"
   >
+    <div class="separator"></div>
     <div class="list-item">
-      <img src="{{ artist.picture }}" class="thumbnail" />
       <div class="section-container">
-        <p class="label">ARTIST:</p>
-        <p class="text">{{ artist.name }}</p>
+        <img src="{{ artist.picture }}" class="thumbnail" />
+        <div class="info-container">
+          <p class="label">ARTIST</p>
+          <p class="text">{{ artist.name }}</p>
+        </div>
+        <div class="info-container">
+          <p class="label">PRICE</p>
+          <p class="text">{{ artist.price }} SEK</p>
+        </div>
+        <div class="info-container">
+          <p class="label">SAMPLE</p>
+          <a href="{{ artist.video }}" target="_blank">Video</a>
+        </div>
       </div>
-      <div class="section-container">
-        <p class="label">PRICE:</p>
-        <p class="text">{{ artist.price }} SEK</p>
-      </div>
-      <div class="section-container">
-        <p class="label">SAMPLE:</p>
-        <a href="{{ artist.video }}" target="_blank">Video</a>
-      </div>
+
+      <button
+        type="button"
+        class="btn-primary"
+        [ngStyle]="{ background: i % 2 ? 'white' : '#e3e3e3' }"
+      >
+        Book artist
+      </button>
     </div>
   </div>
 </div>
