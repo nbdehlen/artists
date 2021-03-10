@@ -19,7 +19,7 @@
 }
 
 .list-container {
-  //   box-shadow: 0px 7px 16px 0px rgb(190 187 187 / 30%);
+  box-shadow: 0px 7px 16px 0px rgb(190 187 187 / 30%);
 }
 
 .list-container:nth-of-type(odd) {
@@ -79,7 +79,7 @@
 
 .btn-primary {
   background-color: white;
-  border-width: 2px;
+  border-width: 1px;
   border-radius: 16px;
   color: #007bff;
   border-color: rgba(143, 142, 142, 0.4);
@@ -87,12 +87,25 @@
   padding: 4px 4px;
   font-weight: 500;
   font-size: 16px;
+  box-shadow: 0px 0px 2px 0px grey;
 
   &:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgb(0, 60, 255);
+  }
+  &:focus {
+    outline: none;
+    border-color: rgba(30, 75, 224, 0.8);
   }
 }
 
 .h-100 {
   height: 100%;
+}
+
+.anchor-as-text {
+  color: rgb(90, 90, 90);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
 }

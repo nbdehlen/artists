@@ -9,7 +9,6 @@
     (click)="clearFilter()"
     class="temp-close-search-input"
   >
-    <!-- <fa-icon [icon]="faTimes"></fa-icon> -->
     Clear
   </span>
 </div>
@@ -34,7 +33,9 @@
         </div>
         <div class="info-container">
           <p class="label">SAMPLE</p>
-          <a href="{{ artist.video }}" target="_blank">Video</a>
+          <a href="{{ artist.video }}" target="_blank" class="anchor-as-text"
+            >Video <fa-icon [icon]="faExternalLinkAlt"></fa-icon
+          ></a>
         </div>
       </div>
 

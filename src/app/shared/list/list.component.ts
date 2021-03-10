@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Subscription } from 'rxjs';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 const GET_ARTISTS = gql`
   {
@@ -46,7 +46,7 @@ export class ListComponent implements OnInit, OnDestroy {
   public filterOn = (item: any) => item.name;
   public searchText = '';
   public filteredData = [];
-  public faTimes = faTimes;
+  public faExternalLinkAlt = faExternalLinkAlt;
   private querySubscription: Subscription;
 
   constructor(private apollo: Apollo) {}
