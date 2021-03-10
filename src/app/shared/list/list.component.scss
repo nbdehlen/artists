@@ -31,3 +31,24 @@
   color: black;
   font-size: 16px;
 }
+
+.search-input {
+  width: 150px;
+  height: 30px;
+  border: 1px solid rgba(143, 142, 142, 0.6);
+  border-radius: 4px;
+  padding-left: 4px;
+
+  &:focus {
+    outline-color: rgba(30, 75, 224, 0.8);
+  }
+}
+
+.temp-close-search-input {
+  color: red;
+  margin-left: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

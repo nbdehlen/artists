@@ -1,12 +1,21 @@
 <div>
-  <input [(ngModel)]="searchText" placeholder="Search for artist" />
-  <span *ngIf="searchText.length > 0" (click)="clearFilter()">X</span>
+  <input
+    [(ngModel)]="searchText"
+    placeholder="Search for artist"
+    class="search-input"
+  />
+  <span
+    *ngIf="searchText.length > 0"
+    (click)="clearFilter()"
+    class="temp-close-search-input"
+    >X</span
+  >
 </div>
 <div *ngIf="loading">Loading...</div>
 <div *ngIf="error">Error :(</div>
 <div *ngIf="artistList">
   <div
-    *ngFor="let artist of artistList | filter: searchText"
+    *ngFor="let artist of artistList | filter: searchText:filterOn"
     class="list-container"
   >
     <div class="list-item">
@@ -16,10 +25,13 @@
         <p class="text">{{ artist.name }}</p>
       </div>
       <div class="section-container">
-        <p class="label">PRICE</p>
+        <p class="label">PRICE:</p>
         <p class="text">{{ artist.price }} SEK</p>
       </div>
-      <a href="{{ artist.video }}" target="_blank">Video</a>
+      <div class="section-container">
+        <p class="label">SAMPLE:</p>
+        <a href="{{ artist.video }}" target="_blank">Video</a>
+      </div>
     </div>
   </div>
 </div>

@@ -42,6 +42,7 @@ export class ListComponent implements OnInit, OnDestroy {
   public artistList: Artist[];
   public loading = true;
   public error: any;
+  public filterOn = (item: any) => item.name;
   public searchText = '';
   public filteredData = [];
 
@@ -66,11 +67,7 @@ export class ListComponent implements OnInit, OnDestroy {
     this.querySubscription.unsubscribe();
   }
 
-  textFilter(term: string, artistList: Artist[]): Artist[] {
-    return artistList.filter((item) => item.name.includes(term));
-  }
-
-  clearFilter() {
+  clearFilter(): void {
     this.searchText = '';
   }
 }
